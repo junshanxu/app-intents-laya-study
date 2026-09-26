@@ -1,0 +1,9 @@
+.build/
+bin/
+*.xcuserstate
+xcuserdata/
+data/runs/
+data/private/
+*.log
+.DS_Store
+__pycache__/

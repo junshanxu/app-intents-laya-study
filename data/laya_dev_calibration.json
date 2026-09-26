@@ -1,0 +1,488 @@
+{
+  "threshold": 1.01,
+  "criterion": "maximum dev coverage with zero accepted errors",
+  "development_count": 60,
+  "accepted_count": 0,
+  "records": [
+    {
+      "task_id": "T00V0",
+      "step": 0,
+      "choice": "search_trips",
+      "gold": "search_trips",
+      "confidence": 0.502,
+      "correct": true
+    },
+    {
+      "task_id": "T00V0",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T00V1",
+      "step": 0,
+      "choice": "search_trips",
+      "gold": "search_trips",
+      "confidence": 0.5143,
+      "correct": true
+    },
+    {
+      "task_id": "T00V1",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T00V2",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "search_trips",
+      "confidence": 0.5308,
+      "correct": false
+    },
+    {
+      "task_id": "T00V2",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T00V3",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "search_trips",
+      "confidence": 0.8118,
+      "correct": false
+    },
+    {
+      "task_id": "T00V3",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T04V0",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "search_trips",
+      "confidence": 0.8838,
+      "correct": false
+    },
+    {
+      "task_id": "T04V0",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T04V0",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "find_tasks",
+      "confidence": 0.7036,
+      "correct": false
+    },
+    {
+      "task_id": "T04V0",
+      "step": 3,
+      "choice": "reschedule_task",
+      "gold": "set_task_status",
+      "confidence": 0.492,
+      "correct": false
+    },
+    {
+      "task_id": "T04V1",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "search_trips",
+      "confidence": 0.8446,
+      "correct": false
+    },
+    {
+      "task_id": "T04V1",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T04V1",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "find_tasks",
+      "confidence": 0.9654,
+      "correct": false
+    },
+    {
+      "task_id": "T04V1",
+      "step": 3,
+      "choice": "find_tasks",
+      "gold": "set_task_status",
+      "confidence": 0.555,
+      "correct": false
+    },
+    {
+      "task_id": "T04V2",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "search_trips",
+      "confidence": 0.8516,
+      "correct": false
+    },
+    {
+      "task_id": "T04V2",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T04V2",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "find_tasks",
+      "confidence": 0.9542,
+      "correct": false
+    },
+    {
+      "task_id": "T04V2",
+      "step": 3,
+      "choice": "search_trips",
+      "gold": "set_task_status",
+      "confidence": 0.5412,
+      "correct": false
+    },
+    {
+      "task_id": "T04V3",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "search_trips",
+      "confidence": 0.7964,
+      "correct": false
+    },
+    {
+      "task_id": "T04V3",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T04V3",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "find_tasks",
+      "confidence": 0.899,
+      "correct": false
+    },
+    {
+      "task_id": "T04V3",
+      "step": 3,
+      "choice": "search_trips",
+      "gold": "set_task_status",
+      "confidence": 0.4644,
+      "correct": false
+    },
+    {
+      "task_id": "T08V0",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.5628,
+      "correct": true
+    },
+    {
+      "task_id": "T08V0",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "reschedule_task",
+      "confidence": 0.9992,
+      "correct": false
+    },
+    {
+      "task_id": "T08V1",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.6334,
+      "correct": true
+    },
+    {
+      "task_id": "T08V1",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "reschedule_task",
+      "confidence": 0.9997,
+      "correct": false
+    },
+    {
+      "task_id": "T08V2",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.6371,
+      "correct": true
+    },
+    {
+      "task_id": "T08V2",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "reschedule_task",
+      "confidence": 0.9996,
+      "correct": false
+    },
+    {
+      "task_id": "T08V3",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.6582,
+      "correct": true
+    },
+    {
+      "task_id": "T08V3",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "reschedule_task",
+      "confidence": 0.9996,
+      "correct": false
+    },
+    {
+      "task_id": "T12V0",
+      "step": 0,
+      "choice": "search_trips",
+      "gold": "add_trip",
+      "confidence": 0.4267,
+      "correct": false
+    },
+    {
+      "task_id": "T12V0",
+      "step": 1,
+      "choice": "add_trip",
+      "gold": "create_task",
+      "confidence": 0.9971,
+      "correct": false
+    },
+    {
+      "task_id": "T12V1",
+      "step": 0,
+      "choice": "add_trip",
+      "gold": "add_trip",
+      "confidence": 0.4752,
+      "correct": true
+    },
+    {
+      "task_id": "T12V1",
+      "step": 1,
+      "choice": "add_trip",
+      "gold": "create_task",
+      "confidence": 0.9942,
+      "correct": false
+    },
+    {
+      "task_id": "T12V2",
+      "step": 0,
+      "choice": "search_trips",
+      "gold": "add_trip",
+      "confidence": 0.4045,
+      "correct": false
+    },
+    {
+      "task_id": "T12V2",
+      "step": 1,
+      "choice": "add_trip",
+      "gold": "create_task",
+      "confidence": 0.9986,
+      "correct": false
+    },
+    {
+      "task_id": "T12V3",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "add_trip",
+      "confidence": 0.5945,
+      "correct": false
+    },
+    {
+      "task_id": "T12V3",
+      "step": 1,
+      "choice": "add_trip",
+      "gold": "create_task",
+      "confidence": 0.9958,
+      "correct": false
+    },
+    {
+      "task_id": "T16V0",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.9829,
+      "correct": true
+    },
+    {
+      "task_id": "T16V0",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "set_task_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T16V1",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.9809,
+      "correct": true
+    },
+    {
+      "task_id": "T16V1",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "set_task_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T16V2",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.9585,
+      "correct": true
+    },
+    {
+      "task_id": "T16V2",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "set_task_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T16V3",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "find_tasks",
+      "confidence": 0.9788,
+      "correct": true
+    },
+    {
+      "task_id": "T16V3",
+      "step": 1,
+      "choice": "find_tasks",
+      "gold": "set_task_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T20V0",
+      "step": 0,
+      "choice": "search_trips",
+      "gold": "search_trips",
+      "confidence": 0.5167,
+      "correct": true
+    },
+    {
+      "task_id": "T20V0",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T20V0",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 0.8942,
+      "correct": false
+    },
+    {
+      "task_id": "T20V1",
+      "step": 0,
+      "choice": "search_trips",
+      "gold": "search_trips",
+      "confidence": 0.5743,
+      "correct": true
+    },
+    {
+      "task_id": "T20V1",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T20V1",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 0.623,
+      "correct": false
+    },
+    {
+      "task_id": "T20V2",
+      "step": 0,
+      "choice": "find_tasks",
+      "gold": "search_trips",
+      "confidence": 0.4553,
+      "correct": false
+    },
+    {
+      "task_id": "T20V2",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T20V2",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 0.8005,
+      "correct": false
+    },
+    {
+      "task_id": "T20V3",
+      "step": 0,
+      "choice": "search_trips",
+      "gold": "search_trips",
+      "confidence": 0.4553,
+      "correct": true
+    },
+    {
+      "task_id": "T20V3",
+      "step": 1,
+      "choice": "search_trips",
+      "gold": "set_trip_status",
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "task_id": "T20V3",
+      "step": 2,
+      "choice": "search_trips",
+      "gold": "create_task",
+      "confidence": 0.7295,
+      "correct": false
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14BC8301DEECB384FCB2BA58 /* StudyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4979DE14E12E0028BA9EA6B /* StudyStore.swift */; };
+		3FB11EB682FAC6C1C5162933 /* TaskBoardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921A775CD63AAD7EBB919C5 /* TaskBoardApp.swift */; };
+		91F64B719D750BAA1AC7320F /* StudyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4979DE14E12E0028BA9EA6B /* StudyStore.swift */; };
+		B0B6F4EFD60F2A4B7F0626E3 /* TripLedgerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C6D172D91884D893EC56A /* TripLedgerApp.swift */; };
+		CA3AE86735D0C723677471F1 /* TaskIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF721335D914085EAEFC829 /* TaskIntents.swift */; };
+		FC53580DBF56F513CBE4AABE /* TripIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58AAB1E530C677D2B223B3D /* TripIntents.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0EF721335D914085EAEFC829 /* TaskIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskIntents.swift; sourceTree = "<group>"; };
+		6921A775CD63AAD7EBB919C5 /* TaskBoardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBoardApp.swift; sourceTree = "<group>"; };
+		740DBD9AC28DC1995912D63C /* TripLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		747EFDC5A3832019DBFC7BEC /* TaskBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4979DE14E12E0028BA9EA6B /* StudyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyStore.swift; sourceTree = "<group>"; };
+		C47C6D172D91884D893EC56A /* TripLedgerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLedgerApp.swift; sourceTree = "<group>"; };
+		F58AAB1E530C677D2B223B3D /* TripIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripIntents.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		01D5A1CC6989FCC634807150 /* TaskBoard */ = {
+			isa = PBXGroup;
+			children = (
+				6921A775CD63AAD7EBB919C5 /* TaskBoardApp.swift */,
+				0EF721335D914085EAEFC829 /* TaskIntents.swift */,
+			);
+			path = TaskBoard;
+			sourceTree = "<group>";
+		};
+		05A5A1051CFD44B8ECDEF504 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B4979DE14E12E0028BA9EA6B /* StudyStore.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		26A1E1076F40901060A48FF5 /* TripLedger */ = {
+			isa = PBXGroup;
+			children = (
+				F58AAB1E530C677D2B223B3D /* TripIntents.swift */,
+				C47C6D172D91884D893EC56A /* TripLedgerApp.swift */,
+			);
+			path = TripLedger;
+			sourceTree = "<group>";
+		};
+		51E3F9D6034289B1B90BC59B = {
+			isa = PBXGroup;
+			children = (
+				05A5A1051CFD44B8ECDEF504 /* Shared */,
+				01D5A1CC6989FCC634807150 /* TaskBoard */,
+				26A1E1076F40901060A48FF5 /* TripLedger */,
+				A623011313E62BA7D92D861D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A623011313E62BA7D92D861D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				747EFDC5A3832019DBFC7BEC /* TaskBoard.app */,
+				740DBD9AC28DC1995912D63C /* TripLedger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3D202790C0DE03EF52BBC5A /* TaskBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A86E6F820FEFECB6A07FD628 /* Build configuration list for PBXNativeTarget "TaskBoard" */;
+			buildPhases = (
+				17ADA32E1AB4E7D27906156E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskBoard;
+			packageProductDependencies = (
+			);
+			productName = TaskBoard;
+			productReference = 747EFDC5A3832019DBFC7BEC /* TaskBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C1A1A30D1E36E5359B3FE0DC /* TripLedger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F7958514CC81D0BF9DB5744 /* Build configuration list for PBXNativeTarget "TripLedger" */;
+			buildPhases = (
+				D3BA6201AE2954EA04BDC5D6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TripLedger;
+			packageProductDependencies = (
+			);
+			productName = TripLedger;
+			productReference = 740DBD9AC28DC1995912D63C /* TripLedger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DCCC6D82590515F0C5176E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A3D202790C0DE03EF52BBC5A = {
+						ProvisioningStyle = Automatic;
+					};
+					C1A1A30D1E36E5359B3FE0DC = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 094CD49F5DDE9C96BAB797D5 /* Build configuration list for PBXProject "AppIntentsLayaStudy" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 51E3F9D6034289B1B90BC59B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A623011313E62BA7D92D861D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3D202790C0DE03EF52BBC5A /* TaskBoard */,
+				C1A1A30D1E36E5359B3FE0DC /* TripLedger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17ADA32E1AB4E7D27906156E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BC8301DEECB384FCB2BA58 /* StudyStore.swift in Sources */,
+				3FB11EB682FAC6C1C5162933 /* TaskBoardApp.swift in Sources */,
+				CA3AE86735D0C723677471F1 /* TaskIntents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3BA6201AE2954EA04BDC5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F64B719D750BAA1AC7320F /* StudyStore.swift in Sources */,
+				FC53580DBF56F513CBE4AABE /* TripIntents.swift in Sources */,
+				B0B6F4EFD60F2A4B7F0626E3 /* TripLedgerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2DE781353A9D867C7A94A930 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Study Tasks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.xj3.appintentstudy.tasks;
+				PRODUCT_NAME = TaskBoard;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		907510F732EF433E77DB1EB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Study Trips";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.xj3.appintentstudy.trips;
+				PRODUCT_NAME = TripLedger;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C6337EAA3B610EAD74C07FB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		E3CFD9ED56C9A4B5C8CD3CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Study Tasks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.xj3.appintentstudy.tasks;
+				PRODUCT_NAME = TaskBoard;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E6F00C442F78BDC18B72B3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		F83EA514CA0B19DE12032B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Study Trips";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.xj3.appintentstudy.trips;
+				PRODUCT_NAME = TripLedger;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		094CD49F5DDE9C96BAB797D5 /* Build configuration list for PBXProject "AppIntentsLayaStudy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6F00C442F78BDC18B72B3D8 /* Debug */,
+				C6337EAA3B610EAD74C07FB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1F7958514CC81D0BF9DB5744 /* Build configuration list for PBXNativeTarget "TripLedger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F83EA514CA0B19DE12032B14 /* Debug */,
+				907510F732EF433E77DB1EB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A86E6F820FEFECB6A07FD628 /* Build configuration list for PBXNativeTarget "TaskBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3CFD9ED56C9A4B5C8CD3CCC /* Debug */,
+				2DE781353A9D867C7A94A930 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DCCC6D82590515F0C5176E2 /* Project object */;
+}

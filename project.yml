@@ -1,0 +1,35 @@
+name: AppIntentsLayaStudy
+options:
+  bundleIdPrefix: tech.xj3.appintentstudy
+settings:
+  base:
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+    SWIFT_VERSION: "6.0"
+    CODE_SIGNING_ALLOWED: "YES"
+    CODE_SIGN_STYLE: Automatic
+    GENERATE_INFOPLIST_FILE: "YES"
+targets:
+  TripLedger:
+    type: application
+    platform: macOS
+    sources:
+      - path: Shared
+      - path: TripLedger
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.xj3.appintentstudy.trips
+        PRODUCT_NAME: TripLedger
+        INFOPLIST_KEY_CFBundleDisplayName: "Study Trips"
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+  TaskBoard:
+    type: application
+    platform: macOS
+    sources:
+      - path: Shared
+      - path: TaskBoard
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.xj3.appintentstudy.tasks
+        PRODUCT_NAME: TaskBoard
+        INFOPLIST_KEY_CFBundleDisplayName: "Study Tasks"
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
