@@ -6,7 +6,7 @@ This repository contains a controlled, synthetic study of macOS App Intents vers
 
 - Both apps now build with an Apple Development identity, pass strict signature verification, and are installed under `~/Applications/AppIntentsLayaStudy`. Shortcuts discovers their App Intent actions.
 - `studyctl`, the MCP bridge, 96 deterministic tasks, independent final-state scoring, Laya development calibration, and analysis scripts are implemented. All 96 authored action trajectories reproduce their expected final state through the Swift CLI.
-- **All seven Shortcuts wrappers passed the system gate on 27 September 2026.** The gate exercised each action through `shortcuts run` and verified the resulting application state. The revised corpus completed all 96 development-arm runs: 92 exact-state successes and four extra-change failures. The 864 held-out runs are now in progress; their results are not interpreted until complete. An earlier easier corpus produced 65/65 successful pilot runs across five development templates and was replaced before any held-out run.
+- **All seven Shortcuts wrappers passed the system gate on 27 September 2026.** The gate exercised each action through `shortcuts run` and verified the resulting application state. The revised corpus completed all 96 development-arm runs and all 864 held-out runs. The held-out exact-state scores were 200, 202, 201, and 202 successes out of 216 for Intents + Claude, Intents + Laya consultation, CLI + Claude, and CLI + Laya consultation, respectively. The paired interface difference was −0.23 percentage points (95% template-bootstrap interval −1.62 to +1.16). An earlier easier corpus produced 65/65 successful pilot runs and was replaced before any held-out run.
 - The local multilingual Laya service works when the request explicitly selects `model="multilingual"`. On the template-isolated development set it selected 18 of 68 ideal next steps correctly. The conservative, development-only threshold is 1.01, which delegates all steps to Claude. [The development calibration chart](figures/laya_dev_calibration.png) is an observed result; it is not evidence of a benefit on held-out tasks.
 
 ## Build and sign
@@ -60,7 +60,12 @@ The script does not print or write the key. It locks macOS, Xcode, Claude Code, 
 
 ## Analysis and constraints
 
-`experiment/analyze.py` requires all 216 complete paired test replicates. It estimates the App Intents effect, Laya effect, and interaction, with 95% percentile intervals bootstrapped by the 18 held-out task templates. The chart and machine-readable report are generated only from observed runs. The [English draft](paper/draft.md) has no invented findings.
+`experiment/analyze.py` requires all 216 complete paired test replicates. It estimates the App Intents effect, Laya consultation effect, and interaction, with 95% percentile intervals bootstrapped by the 18 held-out task templates. Results are in [analysis.json](data/analysis.json), with [success](figures/success_rates.png), [paired-effect](figures/paired_effects.png), and [secondary-outcome](figures/secondary_metrics.png) figures. The [English draft](paper/draft.md) reports the observed results and limitations.
+
+After all runs finish, `python3 experiment/export_public.py` creates `data/results_public.jsonl` from a fixed allowlist of synthetic task IDs, outcomes, usage counts, and timings. Raw tool traces and final-state snapshots stay in ignored `data/runs/`; the public file contains no conversation text, absolute paths, or credentials. The exporter requires the complete development and test run counts, and refuses duplicate run IDs.
+See the [data dictionary](docs/data_dictionary.md) for field definitions.
+
+`python3 experiment/robustness.py` reproduces the clearly **post hoc** sensitivity audit in [robustness.json](data/robustness.json). Fifty-eight of 59 exact-state failures differ only in whether a new follow-up task is linked to its target trip; the prompt did not specify that optional field. Accepting either link choice yields 863/864 task successes. The original exact-state outcome remains primary, but this ambiguity and the resulting ceiling mean the current benchmark is not sufficient to claim a task-completion advantage or submit the paper without revision. The Laya threshold accepted zero of 1,079 held-out consultations, so the Laya arms measure consultation overhead and prompting rather than Laya's action selection.
 
 This small synthetic benchmark cannot establish performance on arbitrary Mac apps or prove that Apple's schema alone caused an effect. The App Intents contrast includes Shortcuts runtime and bridge overhead. Because zero-shot Laya's development accuracy is poor, further work may require domain fine-tuning and a new, separately held-out evaluation; changing the threshold after test results would invalidate the present comparison.
 
@@ -71,3 +76,6 @@ This small synthetic benchmark cannot establish performance on arbitrary Mac app
 - [Apple App Shortcuts platform guidance](https://developer.apple.com/design/human-interface-guidelines/app-shortcuts)
 - [Laya model card](https://huggingface.co/convaiinnovations/laya)
 - [Volcano Ark Coding Plan quick start](https://docs.volcengine.com/docs/ark/coding-plan-personal-get-started?lang=zh)
+- [ShortcutsBench](https://arxiv.org/abs/2407.00132)
+- [MacArena](https://arxiv.org/abs/2606.06560)
+- [MacAgentBench](https://arxiv.org/abs/2606.22557)

@@ -1,0 +1,30 @@
+{
+  "label": "post hoc sensitivity; original exact-state outcome remains primary",
+  "exact_success_counts": {
+    "intents_claude": 200,
+    "intents_laya": 202,
+    "cli_laya": 202,
+    "cli_claude": 201
+  },
+  "optional_target_trip_link_allowed_success_counts": {
+    "intents_claude": 216,
+    "intents_laya": 215,
+    "cli_laya": 216,
+    "cli_claude": 216
+  },
+  "reclassified_link_only_failures": 58,
+  "remaining_failures": 1,
+  "invalid_calls_by_arm_and_operation": {
+    "cli_claude:invalid_cli_command": 15,
+    "cli_claude:set_task_status": 55,
+    "cli_laya:invalid_cli_command": 13,
+    "cli_laya:set_task_status": 48
+  },
+  "failed_task_status_terms": {
+    "completed": 97,
+    "closed": 4,
+    "finished": 2
+  },
+  "laya_consultations": 1079,
+  "laya_accepted_recommendations": 0
+}

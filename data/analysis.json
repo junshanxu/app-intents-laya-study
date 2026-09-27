@@ -1,0 +1,112 @@
+{
+  "n_paired_replicates": 216,
+  "n_templates": 18,
+  "success": {
+    "groups": {
+      "intents_claude": 0.9259259259259259,
+      "intents_laya": 0.9351851851851852,
+      "cli_claude": 0.9305555555555556,
+      "cli_laya": 0.9351851851851852
+    },
+    "interface_difference": -0.0023148148148148147,
+    "laya_difference": 0.006944444444444444,
+    "interaction": 0.004629629629629629
+  },
+  "ci_95_template_bootstrap": {
+    "interface_difference": [
+      -0.016203703703703703,
+      0.011574074074074073
+    ],
+    "laya_difference": [
+      -0.006944444444444444,
+      0.027777777777777776
+    ],
+    "interaction": [
+      -0.032407407407407406,
+      0.05555555555555555
+    ],
+    "intents_claude": [
+      0.8425925925925926,
+      1.0
+    ],
+    "intents_laya": [
+      0.8657407407407407,
+      0.9907407407407407
+    ],
+    "cli_claude": [
+      0.8472222222222222,
+      1.0
+    ],
+    "cli_laya": [
+      0.8611111111111112,
+      1.0
+    ]
+  },
+  "ancillary_means": {
+    "intents_claude": {
+      "invalid_calls": 0.0,
+      "extra_changes": 0.07407407407407407,
+      "mismatched_fields": 0.07407407407407407,
+      "tool_calls": 2.8333333333333335,
+      "app_latency_ms": 1359.537361111111,
+      "laya_latency_ms": 0.0,
+      "tool_latency_ms": 1359.537361111111,
+      "total_latency_ms": 16596.757546296296,
+      "failure_recovery_rate": 0.0,
+      "usage_reported_rate": 0.9953703703703703,
+      "mean_input_tokens": 2260.479069767442,
+      "mean_output_tokens": 413.3953488372093,
+      "mean_cache_creation_input_tokens": 0.0,
+      "mean_cache_read_input_tokens": 7561.576744186046
+    },
+    "intents_laya": {
+      "invalid_calls": 0.0,
+      "extra_changes": 0.06018518518518518,
+      "mismatched_fields": 0.06481481481481481,
+      "tool_calls": 2.8333333333333335,
+      "app_latency_ms": 1392.4161574074076,
+      "laya_latency_ms": 1715.8845833333335,
+      "tool_latency_ms": 3108.3007407407404,
+      "total_latency_ms": 26099.03476851852,
+      "failure_recovery_rate": 0.0,
+      "usage_reported_rate": 1.0,
+      "mean_input_tokens": 3457.8055555555557,
+      "mean_output_tokens": 656.3888888888889,
+      "mean_cache_creation_input_tokens": 0.0,
+      "mean_cache_read_input_tokens": 15135.967592592593
+    },
+    "cli_claude": {
+      "invalid_calls": 0.32407407407407407,
+      "extra_changes": 0.06944444444444445,
+      "mismatched_fields": 0.06944444444444445,
+      "tool_calls": 3.1574074074074074,
+      "app_latency_ms": 52.97203703703704,
+      "laya_latency_ms": 0.0,
+      "tool_latency_ms": 52.97203703703704,
+      "total_latency_ms": 15979.018981481482,
+      "failure_recovery_rate": 0.27314814814814814,
+      "usage_reported_rate": 1.0,
+      "mean_input_tokens": 2526.537037037037,
+      "mean_output_tokens": 449.13425925925924,
+      "mean_cache_creation_input_tokens": 0.0,
+      "mean_cache_read_input_tokens": 7039.912037037037
+    },
+    "cli_laya": {
+      "invalid_calls": 0.2824074074074074,
+      "extra_changes": 0.06481481481481481,
+      "mismatched_fields": 0.06481481481481481,
+      "tool_calls": 3.115740740740741,
+      "app_latency_ms": 53.14180555555555,
+      "laya_latency_ms": 1725.1968981481482,
+      "tool_latency_ms": 1778.3387037037037,
+      "total_latency_ms": 28389.203194444442,
+      "failure_recovery_rate": 0.25,
+      "usage_reported_rate": 1.0,
+      "mean_input_tokens": 3405.3935185185187,
+      "mean_output_tokens": 751.25,
+      "mean_cache_creation_input_tokens": 0.0,
+      "mean_cache_read_input_tokens": 15890.652777777777
+    }
+  },
+  "method": "5000 percentile bootstrap resamples of 18 held-out templates; all paired repetitions retained within a resampled template"
+}
