@@ -68,6 +68,7 @@ See the [data dictionary](docs/data_dictionary.md) for field definitions.
 `python3 experiment/robustness.py` reproduces the clearly **post hoc** sensitivity audit in [robustness.json](data/robustness.json). Fifty-eight of 59 exact-state failures differ only in whether a new follow-up task is linked to its target trip; the prompt did not specify that optional field. Accepting either link choice yields 863/864 task successes. The original exact-state outcome remains primary, but this ambiguity and the resulting ceiling mean the current benchmark is not sufficient to claim a task-completion advantage or submit the paper without revision. The Laya threshold accepted zero of 1,079 held-out consultations, so the Laya arms measure consultation overhead and prompting rather than Laya's action selection.
 
 This small synthetic benchmark cannot establish performance on arbitrary Mac apps or prove that Apple's schema alone caused an effect. The App Intents contrast includes Shortcuts runtime and bridge overhead. Because zero-shot Laya's development accuracy is poor, further work may require domain fine-tuning and a new, separately held-out evaluation; changing the threshold after test results would invalidate the present comparison.
+The [next-study proposal](docs/next_study.md) specifies how to repair optional-field ambiguity, separate agent-visible tool schemas from execution paths, and evaluate a genuinely active Laya decision layer on a new held-out set.
 
 ## Primary references
 
