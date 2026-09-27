@@ -4,10 +4,10 @@ This repository contains a controlled, synthetic study of macOS App Intents vers
 
 ## Current status
 
-- Both current app targets compile. Shortcuts initially discovered their seven actions from an ad-hoc build; after subsequent unsigned rebuilds, the unfinished read wrapper shows **Unknown Action**. Reinstalling signed builds and recreating/rebinding the wrappers is required.
+- Both apps now build with an Apple Development identity, pass strict signature verification, and are installed under `~/Applications/AppIntentsLayaStudy`. Shortcuts discovers their App Intent actions.
 - `studyctl`, the MCP bridge, 96 deterministic tasks, independent final-state scoring, Laya development calibration, and analysis scripts are implemented. All 96 authored action trajectories reproduce their expected final state through the Swift CLI.
-- **The Shortcuts read/write gate has not passed.** The local apps were ad-hoc signed; macOS `linkd` logged `Rejecting invalid client due to requiresValidatedBundle`. A validated Apple development signature is required before any App Intents trial. A separate Text shortcut now returns successfully through `shortcuts run` when it ends with **Stop and Output**. No formal test-split runs or paper result numbers have been produced.
-- The local multilingual Laya service works when the request explicitly selects `model="multilingual"`. On the template-isolated development set it selected 14 of 60 ideal next steps correctly. The conservative, development-only threshold is 1.01, which delegates all steps to Claude. [The development calibration chart](figures/laya_dev_calibration.png) is an observed result; it is not evidence of a benefit on held-out tasks.
+- **All seven Shortcuts wrappers passed the system gate on 27 September 2026.** The gate exercised each action through `shortcuts run` and verified the resulting application state. The revised corpus completed all 96 development-arm runs: 92 exact-state successes and four extra-change failures. The 864 held-out runs are now in progress; their results are not interpreted until complete. An earlier easier corpus produced 65/65 successful pilot runs across five development templates and was replaced before any held-out run.
+- The local multilingual Laya service works when the request explicitly selects `model="multilingual"`. On the template-isolated development set it selected 18 of 68 ideal next steps correctly. The conservative, development-only threshold is 1.01, which delegates all steps to Claude. [The development calibration chart](figures/laya_dev_calibration.png) is an observed result; it is not evidence of a benefit on held-out tasks.
 
 ## Build and sign
 
@@ -19,7 +19,7 @@ zsh scripts/build-cli.sh
 APPLE_DEVELOPMENT_TEAM=YOUR_TEAM_ID zsh scripts/build-apps.sh
 ```
 
-The second script refuses an ad-hoc build, installs both apps under `~/Applications/AppIntentsLayaStudy`, and registers them with Launch Services. Start each app once, then create seven custom Shortcuts wrappers described in [docs/shortcuts_setup.md](docs/shortcuts_setup.md). Apple's App Shortcuts feature is not available on macOS; the experiment uses custom Shortcuts that call App Intent actions.
+The second script refuses an ad-hoc build, installs both apps under `~/Applications/AppIntentsLayaStudy`, and registers them with Launch Services. Start each app once, then create or import seven custom Shortcuts wrappers described in [docs/shortcuts_setup.md](docs/shortcuts_setup.md). Apple's App Shortcuts feature is not available on macOS; the experiment uses custom Shortcuts that call App Intent actions.
 
 ## Synthetic data and protocol
 
@@ -40,10 +40,10 @@ Start the existing local server with the multilingual checkpoint:
 ```bash
 HF_HUB_OFFLINE=1 /path/to/laya-local-deploy/start.sh
 python3 experiment/calibrate_laya.py
-python3 experiment/run.py gate
+python3 experiment/run.py gate-all
 ```
 
-The gate must run one real read and one real write through Shortcuts, and verify the app state change. It will not call Swift `perform()` directly or silently use the CLI fallback. If Laya is installed elsewhere, set `STUDY_LAYA_PYTHON` to that environment's Python executable before formal runs. The local endpoint defaults to `http://127.0.0.1:8765/v1/systemone` and can be set with `STUDY_LAYA_URL`. `STUDY_LAYA_CACHE_REF` can point to the local Hugging Face revision file when the cache is in a nonstandard location.
+The gate runs all seven operations through Shortcuts and verifies the final app state. It will not call Swift `perform()` directly or silently use the CLI fallback. If Laya is installed elsewhere, set `STUDY_LAYA_PYTHON` to that environment's Python executable before formal runs. The local endpoint defaults to `http://127.0.0.1:8765/v1/systemone` and can be set with `STUDY_LAYA_URL`. `STUDY_LAYA_CACHE_REF` can point to the local Hugging Face revision file when the cache is in a nonstandard location.
 
 Only after the gate passes, provide a Coding Plan key to the experiment process. The script sets the official Anthropic-compatible Coding Plan base URL, fixes `doubao-seed-2.1-pro`, and ignores the user's global Claude Code settings. Do not put the key in this repository, logs, or a shell history file. In an interactive zsh session, enter it without echo and remove it after the runs:
 

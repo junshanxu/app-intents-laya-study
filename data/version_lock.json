@@ -1,0 +1,12 @@
+{
+  "macos": "27.2",
+  "xcode": "Xcode 27.0\nBuild version 27A266a",
+  "claude_code": "2.1.250 (Claude Code)",
+  "laya": "0.3.20",
+  "laya_hf_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "model": "doubao-seed-2.1-pro",
+  "coding_plan_base_url": "https://ark.cn-beijing.volces.com/api/coding",
+  "corpus_sha256": "22369c8486b46c9a663135ecd392d85312697ddf69a22d4361406bfe3a6256df",
+  "calibration_sha256": "d91db535d329cd12916dc2631d203ac258d2b1ab7951063cb5294e48d6ad58a4",
+  "implementation_sha256": "dc688bd5092b678397c44ec92e61b052d62cba2768e7530a5cc38f03e8a72180"
+}

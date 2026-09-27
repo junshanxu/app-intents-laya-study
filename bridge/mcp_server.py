@@ -128,7 +128,8 @@ def run_tool(operation: str, arguments: dict) -> tuple[str, bool]:
             return rejected(operation, f"Unknown backend: {BACKEND}")
     except (OSError, subprocess.TimeoutExpired) as error:
         result, failed = str(error), True
-    trace({"operation": operation, "backend": BACKEND, "failed": failed, "latency_ms": round((time.perf_counter() - started) * 1000, 2)})
+    trace({"operation": operation, "backend": BACKEND, "arguments": arguments,
+           "failed": failed, "latency_ms": round((time.perf_counter() - started) * 1000, 2)})
     HISTORY.append(operation)
     RECOMMENDED = None
     return result, failed

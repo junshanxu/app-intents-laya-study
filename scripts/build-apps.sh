@@ -10,8 +10,9 @@ cd "$project_dir"
 xcodegen generate --spec project.yml
 for scheme in TripLedger TaskBoard; do
   xcodebuild -project AppIntentsLayaStudy.xcodeproj -scheme "$scheme" \
-    -configuration Debug -derivedDataPath .build \
-    DEVELOPMENT_TEAM="$team" CODE_SIGNING_ALLOWED=YES CODE_SIGN_STYLE=Automatic build -quiet
+    -configuration Debug -derivedDataPath .build -allowProvisioningUpdates \
+    DEVELOPMENT_TEAM="$team" CODE_SIGNING_ALLOWED=YES CODE_SIGN_STYLE=Automatic \
+    CODE_SIGN_IDENTITY='Apple Development' build -quiet
   source_app="$project_dir/.build/Build/Products/Debug/$scheme.app"
   signature=$(codesign -dv --verbose=4 "$source_app" 2>&1)
   if [[ "$signature" == *'Signature=adhoc'* || "$signature" == *'TeamIdentifier=not set'* ]]; then

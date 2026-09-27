@@ -65,11 +65,12 @@ def shortcuts_gate() -> None:
     cases = load_cases()
     case = cases["T00V0"]
     reset(case)
+    fixture_trip_id = case["initial"]["trips"][0]["id"]
     # The wrappers must be supplied by the Shortcuts editor. Merely finding the
     # app actions in its library does not pass this gate.
     for operation, args, expected_fragment in [
-        ("search_trips", {"destination": "Kyoto"}, "trip-T00V0"),
-        ("create_task", {"task_id": "gate-task", "title": "Gate task", "due_date": "2027-01-15", "trip_id": "trip-T00V0"}, "gate-task"),
+        ("search_trips", {"destination": "Kyoto"}, fixture_trip_id),
+        ("create_task", {"task_id": "gate-task", "title": "Gate task", "due_date": "2027-01-15", "trip_id": fixture_trip_id}, "gate-task"),
     ]:
         with tempfile.TemporaryDirectory(prefix="study-gate-") as directory:
             input_path = Path(directory) / "input.json"
@@ -88,6 +89,38 @@ def shortcuts_gate() -> None:
     if not any(item["id"] == "gate-task" for item in state["tasks"]):
         raise RuntimeError("Write shortcut returned without changing application state")
     print("Shortcuts read/write gate passed")
+
+
+def all_shortcuts_gate() -> None:
+    """Require every experiment action to work through a saved Shortcut."""
+    shortcuts_gate()
+    operations = [
+        ("add_trip", {"trip_id": "gate-trip", "destination": "Oslo", "start_date": "2027-01-16"}, "gate-trip"),
+        ("set_trip_status", {"trip_id": "gate-trip", "status": "cancelled"}, "cancelled"),
+        ("find_tasks", {"query": "Gate task"}, "gate-task"),
+        ("set_task_status", {"task_id": "gate-task", "status": "done"}, "done"),
+        ("reschedule_task", {"task_id": "gate-task", "due_date": "2027-01-17"}, "2027-01-17"),
+    ]
+    for operation, arguments, expected in operations:
+        with tempfile.TemporaryDirectory(prefix="study-gate-all-") as directory:
+            input_path = Path(directory) / "input.json"
+            output_path = Path(directory) / "output.txt"
+            input_path.write_text(json.dumps(arguments))
+            try:
+                result = subprocess.run(["shortcuts", "run", f"AI_{operation}", "-i", str(input_path), "-o", str(output_path)],
+                                        capture_output=True, text=True, timeout=30)
+            except subprocess.TimeoutExpired as error:
+                raise RuntimeError(f"Shortcuts system execution timed out for {operation}") from error
+            if result.returncode or not output_path.exists() or expected not in output_path.read_text():
+                raise RuntimeError(f"Shortcuts system execution failed for {operation}: {result.stderr.strip()[:200]}")
+    state = snapshot()
+    trip = next((item for item in state["trips"] if item["id"] == "gate-trip"), None)
+    task = next((item for item in state["tasks"] if item["id"] == "gate-task"), None)
+    if not trip or trip["destination"] != "Oslo" or trip["status"] != "cancelled":
+        raise RuntimeError("Trip wrappers returned without the expected final application state")
+    if not task or task["status"] != "done" or task["dueDate"] != "2027-01-17":
+        raise RuntimeError("Task wrappers returned without the expected final application state")
+    print("All seven Shortcuts action wrappers passed")
 
 
 def run_one(case: dict, backend: str, decision: str, repeat: int, threshold: float, key: str) -> dict:
@@ -141,6 +174,8 @@ def run_one(case: dict, backend: str, decision: str, repeat: int, threshold: flo
         total_ms = round((time.perf_counter() - started) * 1000, 2)
     observed = snapshot()
     outcome = score(case, observed)
+    state_path = RUN_DIR / f"{run_id}.final-state.json"
+    state_path.write_text(json.dumps(observed, ensure_ascii=False, indent=2) + "\n")
     events = [json.loads(line) for line in trace_path.read_text().splitlines()] if trace_path.exists() else []
     response = {}
     if process and process.returncode == 0:
@@ -172,17 +207,20 @@ def run_one(case: dict, backend: str, decision: str, repeat: int, threshold: flo
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("phase", choices=["gate", "dev", "test"])
+    parser.add_argument("phase", choices=["gate", "gate-all", "dev", "test"])
     parser.add_argument("--limit", type=int, default=0, help="Limit tasks for a development smoke run")
     args = parser.parse_args()
     if args.phase == "gate":
         shortcuts_gate()
         return
+    if args.phase == "gate-all":
+        all_shortcuts_gate()
+        return
     key = os.environ.get("ARK_CODING_PLAN_API_KEY", "")
     if not key:
         raise SystemExit("Set ARK_CODING_PLAN_API_KEY only in the experiment process")
     lock_versions()
-    shortcuts_gate()
+    all_shortcuts_gate()
     calibration = json.loads((ROOT / "data/laya_dev_calibration.json").read_text())
     threshold = float(calibration["threshold"])
     cases = [case for case in load_cases().values() if case["split"] == args.phase]

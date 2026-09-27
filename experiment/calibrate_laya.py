@@ -17,7 +17,9 @@ def apply_gold(state: dict, case: dict, operation: str, arguments: dict) -> None
         state["trips"].append(next(item for item in case["expected"]["trips"] if item["id"] == identifier))
     elif operation == "create_task":
         identifier = arguments["task_id"]
-        state["tasks"].append(next(item for item in case["expected"]["tasks"] if item["id"] == identifier))
+        created = dict(next(item for item in case["expected"]["tasks"] if item["id"] == identifier))
+        created["status"] = "open"  # Creation precedes any later completion action.
+        state["tasks"].append(created)
     elif operation == "set_trip_status":
         next(item for item in state["trips"] if item["id"] == arguments["trip_id"])["status"] = arguments["status"]
     elif operation == "set_task_status":
